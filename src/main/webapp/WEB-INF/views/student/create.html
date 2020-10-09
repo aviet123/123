@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<p>
+    <a th:href="@{/students}">
+        Back to list
+    </a>
+</p>
+<h1>Create new student</h1>
+
+<form th:object="${student}" method="post" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>name</td>
+            <td><input th:field="*{name}"/></td>
+        </tr>
+        <tr>
+            <td>address</td>
+            <td><input th:field="*{address}"/></td>
+        </tr>
+        <tr>
+            <td>image</td>
+            <td><input type="file" th:field="*{image}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="create"/></td>
+        </tr>
+
+    </table>
+</form>
+</body>
+</html>
